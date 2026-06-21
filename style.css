@@ -1,0 +1,37 @@
+@layer global {
+    /* box sizing on wild card, use * for all elements 
+        this will prevent adding padding size to width or height attributes */
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0; /*get rid of browser default setting*/
+    }
+
+    h1,
+    h2,
+    h3 {
+        margin: 0; /* remove default margins */
+    }
+
+    p {
+        margin: 0; /* remove default margins */
+    }
+
+    img {
+        /* by default img tags are inline elements which means browser 
+            will add a little white space at the bottom of the image,
+            coz most inline elements in html are treated as text and 
+            they add white space at the bottom for letters that have  descenders
+            meaning the letters that go below the baseline like
+            lowercase j, g, p,q,y etc. 
+            so display block will just get rid of this white space*/
+        display: block;
+        /* this will ensure the images doesn't go beyond the bounds of its container
+            as it can cause horizontally scrolling, which we don't need.*/
+        max-width: 100%;
+    }
+}
